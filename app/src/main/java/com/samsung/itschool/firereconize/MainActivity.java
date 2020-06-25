@@ -12,6 +12,7 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String NETWORK_FILE="fire_net.pt";
     int cameraRequestCode = 001;
     Classifier classifier;
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        classifier = new Classifier(Utils.assetFilePath(this,"fire_net.pt"));
+        classifier = new Classifier(Utils.assetFilePath(this,NETWORK_FILE));
         Button capture = findViewById(R.id.capture);
         capture.setOnClickListener(new View.OnClickListener(){
             @Override
